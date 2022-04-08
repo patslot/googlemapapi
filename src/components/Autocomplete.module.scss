@@ -1,0 +1,12 @@
+$main: #100123;
+.formcontainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  .placeinput {
+    width: 50%;
+    margin: 1rem;
+    padding: 0.5em;
+    border: 1px solid $main;
+  }
+}
