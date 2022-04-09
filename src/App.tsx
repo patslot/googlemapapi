@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 import { Button, Layout } from 'antd';
 import Marker from './components/Marker';
 import LocalTime from './components/LocalTime';
-
+const GOOGLE_API_TOKEN: string = process.env.GOOGLE_API_TOKEN as string;
 const { Header, Content } = Layout;
 function App() {
   type searchedLocation = {
@@ -108,11 +108,7 @@ function App() {
         </Button>
       </Header>
       <Content>
-        {' '}
-        <Wrapper
-          apiKey={'AIzaSyBRZVZc-HnQyRjmlkCEVZcjFGzK-uElufE'}
-          render={render}
-        >
+        <Wrapper apiKey={GOOGLE_API_TOKEN} render={render}>
           <Map
             center={center}
             onClick={onClick}

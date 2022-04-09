@@ -1,9 +1,11 @@
+const GOOGLE_API_TOKEN = process.env.GOOGLE_API_TOKEN;
+
 export async function getLocalTime(loc) {
   const targetDate = new Date();
   const timestamp =
     targetDate.getTime() / 1000 + targetDate.getTimezoneOffset() * 60;
   const response = await fetch(
-    `https://maps.googleapis.com/maps/api/timezone/json?location=${loc}&timestamp=${timestamp}&key=AIzaSyBRZVZc-HnQyRjmlkCEVZcjFGzK-uElufE`,
+    `https://maps.googleapis.com/maps/api/timezone/json?location=${loc}&timestamp=${timestamp}&key=${GOOGLE_API_TOKEN}`,
     {
       method: 'GET',
       headers: {},
